@@ -1,0 +1,45 @@
+version: "3"
+services:
+  php:
+    build: './php/'
+    volumes:
+      - ./public:/var/www/html/
+    restart: always
+    depends_on:
+      - mysql
+    networks:
+      - pharmacy_network
+
+  apache:
+    build: './apache/'
+    depends_on:
+      - php
+      - mysql
+    ports:
+      - "8086:80"
+    volumes:
+      - ./public:/var/www/html/
+    restart: always
+    networks:
+      - pharmacy_network
+
+  mysql:
+    image: mysql:8.0
+    platform: linux/x86_64
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./public/dump/pharma.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: "rootpassword"
+      MYSQL_DATABASE: "pharmacy_db"
+    command: ['mysqld', '--default-authentication-plugin=mysql_native_password']
+    networks:
+      - pharmacy_network
+
+volumes:
+  db_data:
+
+networks:
+  pharmacy_network:
+    driver: bridge

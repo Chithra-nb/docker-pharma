@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    /* background: linear-gradient(135deg, #3C8CE7, #00EAFF); Cool blue gradient symbolizing trust and cleanliness */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(204, 247, 255, 0.9)); /* Soft white and light blue gradient for a clean and professional look */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 2.5em;
+    background: linear-gradient(135deg, #36D1DC, #5B86E5); /* Light to deep blue gradient, evoking trust and calm */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #B2FEFA, #0ED2F7); /* Light teal to cyan gradient for input fields */
+    color: #333;
+}
+
+button {
+    background: linear-gradient(135deg, #00C9FF, #92FE9D); /* Gradient shifting from blue to green, symbolizing trust and health */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #92FE9D, #00C9FF); /* Reversed gradient on hover */
+}
+
+.error {
+    color: #E74C3C;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Table formatting */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #3C8CE7; /* Solid color for table header */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
